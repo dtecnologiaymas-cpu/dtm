@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DTecnologíaYMás | Transformación Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#0066ff;
+    --secondary:#00c2ff;
+    --accent:#ff2d2d;
+    --dark:#050b18;
+    --dark2:#0b1325;
+    --card:rgba(255,255,255,.05);
+    --text:#ffffff;
+    --gray:#bfc8d8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--dark);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===== BACKGROUND ===== */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,102,255,.25),transparent 30%),
+    radial-gradient(circle at 80% 40%,rgba(255,45,45,.15),transparent 30%),
+    radial-gradient(circle at 50% 80%,rgba(0,194,255,.15),transparent 30%);
+    z-index:-1;
+}
+
+/* ===== NAVBAR ===== */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(5,11,24,.75);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 5%;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:55px;
+}
+
+.logo h2{
+    font-size:1.5rem;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--secondary);
+}
+
+.btn-contacto{
+    padding:12px 24px;
+    background:linear-gradient(135deg,var(--accent),#ff5555);
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8%;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--secondary);
+}
+
+.hero p{
+    color:var(--gray);
+    font-size:1.1rem;
+    max-width:650px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    padding:16px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.2);
+    padding:16px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:90%;
+    max-width:700px;
+}
+
+/* ===== STATS ===== */
+
+.stats{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    padding:0 5% 80px;
+}
+
+.stat{
+    background:var(--card);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    text-align:center;
+    padding:35px;
+}
+
+.stat h3{
+    font-size:2rem;
+    color:var(--secondary);
+}
+
+/* ===== SERVICES ===== */
+
+section{
+    padding:90px 5%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+}
+
+.section-title span{
+    color:var(--secondary);
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:35px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,102,255,.25);
+}
+
+.card h3{
+    margin:20px 0;
+    color:var(--secondary);
+}
+
+.card p{
+    color:var(--gray);
+}
+
+/* ===== CTA ===== */
+
+.cta{
+    margin:80px auto;
+    max-width:1300px;
+    border-radius:30px;
+    text-align:center;
+    padding:80px;
+    background:
+    linear-gradient(135deg,#0066ff,#001f5c);
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    margin-bottom:30px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    padding:50px 5%;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer p{
+    color:var(--gray);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:1000px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.stats{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.menu{
+    display:none;
+}
+
+}
+
+@media(max-width:700px){
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+.cta h2{
+    font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="logo.png" alt="">
+            <h2>DTecnología<span>YMás</span></h2>
+        </div>
+
+        <nav class="menu">
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Soluciones</a>
+            <a href="#">Portafolio</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <a href="https://wa.me/522451072478" class="btn-contacto">
+            WhatsApp
+        </a>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Transformamos Tecnología en
+            <span>Soluciones Reales</span>
+        </h1>
+
+        <p>
+            Desarrollo de software, aplicaciones móviles,
+            sitios web, videovigilancia, infraestructura
+            tecnológica y transformación digital para
+            empresas e instituciones.
+        </p>
+
+        <div class="buttons">
+            <a href="#" class="btn-primary">
+                Solicitar Cotización
+            </a>
+
+            <a href="#" class="btn-secondary">
+                Ver Servicios
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="hero-tech.png" alt="">
+    </div>
+
+</section>
+
+<div class="stats">
+
+    <div class="stat">
+        <h3>+500</h3>
+        <p>Equipos Atendidos</p>
+    </div>
+
+    <div class="stat">
+        <h3>+100</h3>
+        <p>Proyectos Realizados</p>
+    </div>
+
+    <div class="stat">
+        <h3>+10</h3>
+        <p>Años de Experiencia</p>
+    </div>
+
+    <div class="stat">
+        <h3>98%</h3>
+        <p>Clientes Satisfechos</p>
+    </div>
+
+</div>
+
+<section>
+
+<div class="section-title">
+<h2>Nuestros <span>Servicios</span></h2>
+</div>
+
+<div class="services">
+
+<div class="card">
+<h3>Desarrollo de Software</h3>
+<p>Sistemas administrativos, educativos y empresariales a la medida.</p>
+</div>
+
+<div class="card">
+<h3>Aplicaciones Móviles</h3>
+<p>Apps Android e iOS para optimizar procesos empresariales.</p>
+</div>
+
+<div class="card">
+<h3>Desarrollo Web</h3>
+<p>Sitios corporativos, landing pages y tiendas en línea.</p>
+</div>
+
+<div class="card">
+<h3>Infraestructura Tecnológica</h3>
+<p>Redes, servidores, cableado estructurado y conectividad.</p>
+</div>
+
+<div class="card">
+<h3>Videovigilancia</h3>
+<p>Cámaras IP, CCTV y monitoreo remoto inteligente.</p>
+</div>
+
+<div class="card">
+<h3>Soporte Tecnológico</h3>
+<p>Mantenimiento preventivo y correctivo especializado.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="cta">
+
+<h2>¿Tienes un proyecto tecnológico?</h2>
+
+<p>
+Convirtamos tus ideas en soluciones digitales innovadoras.
+</p>
+
+<a href="https://wa.me/522451072478" class="btn-primary">
+Solicitar Asesoría Gratuita
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>DTecnologíaYMás</h2>
+
+<p>
+Innovación • Software • Infraestructura • Transformación Digital
+</p>
+
+<br>
+
+<p>
+© 2026 Todos los derechos reservados.
+</p>
+
+</footer>
+
+</body>
+</html>
